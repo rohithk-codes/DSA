@@ -49,6 +49,27 @@ class LinkedList {
 
     }
 
+    sort() {
+        if (!this.head || !this.head.next) return; // If list is empty or has one element, no need to sort.
+
+        let swapped;
+        do {
+            swapped = false;
+            let curr = this.head;
+
+            while (curr.next) {
+                if (curr.data > curr.next.data) {
+                    // Swap data values
+                    let temp = curr.data;
+                    curr.data = curr.next.data;
+                    curr.next.data = temp;
+                    swapped = true;
+                }
+                curr = curr.next;
+            }
+        } while (swapped);
+    }
+
   //Insert element to the specific postion of the list
 
     insert(value,index){
@@ -179,16 +200,16 @@ reverse(){
 
 let list = new LinkedList()
 
-console.log("list is empty",list.isEmpty());
-console.log("List size",list.getSize())
+// console.log("list is empty",list.isEmpty());
+// console.log("List size",list.getSize())
 
 list.append(10)
 list.append(20)
 list.append(40)
-list.append(50)
-list.print()
+list.append(10)
+// list.print()
 
-list.insert(30,2)
+// list.insert(30,2)
 list.print()
 
 

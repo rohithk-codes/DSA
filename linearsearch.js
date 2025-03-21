@@ -1,16 +1,16 @@
 
-// function linearsearch(arr,target){
+function linearsearch(arr,target){
 
-//     for(let i = 0 ; i<arr.length; i++){
-//         if(arr[i]==target){
-//             return i
-//         }
-//     }
-//     return -1
+    for(let i = 0 ; i<arr.length; i++){
+        if(arr[i]==target){
+            return i
+        }
+    }
+    return -1
 
-// }
+}
 
-// console.log(linearsearch(arr,target));
+console.log(linearsearch(arr,target));
 
 let arr=[1,3,4,5,7]
 
@@ -36,3 +36,4 @@ function binarySearch(arr,target){
 
 
 console.log(binarySearch(arr,5));
+
