@@ -39,7 +39,7 @@ displayHash(){
 
 }
 
-const a = [15, 11, 27, 8, 12];
+const a = [15, 11, 27, 18, 12];
 const n = a.length
 
 const h = new hashTable(7)
