@@ -13,7 +13,8 @@ const value2 = new Node(3)
 const value3 = new Node(4)
 const value4 = new Node(5)
 
-root.right(value1)
-root.left(value2)
+root.right=value1
+root.left=value2
 
-value1.left(value3)
+value1.left=value3
+value1.right=value4
