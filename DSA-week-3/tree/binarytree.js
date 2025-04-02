@@ -18,3 +18,16 @@ root.left=value2
 
 value1.left=value3
 value1.right=value4
+
+function preOrder(node){
+    if(!node) return 
+    console.log(node.value)
+    
+preOrder(node.left)
+console.log(node.value);
+
+preOrder(node.right)
+console.log(node.value);
+
+
+}
