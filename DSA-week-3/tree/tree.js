@@ -22,6 +22,8 @@ const grandchild2 = new Node("grandchild2")
 child1.addchild(grandchild1)
 child1.addchild(grandchild2)
 
+
+
 function traverse(node){
     if(!node) return
     console.log(node.value)
@@ -32,3 +34,5 @@ function traverse(node){
 }
 
 traverse(tree)
+
+// console.log(tree);
