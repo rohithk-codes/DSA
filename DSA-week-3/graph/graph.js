@@ -16,12 +16,13 @@ class Graph{
          this.Graph[vertex2].add(vertex1)   
     }
 
-    removeVertex(vertex){
-        if(this.Graph[vertex]){
-            delete this.Graph[vertex]
-        }
-        for(let key in this.Graph){
-            this.Graph[key]=this.Graph[key].filter((v)=>v!==vertex)
+       // Remove a vertex and its edges
+       removeVertex(vertex) {
+        if (this.Graph[vertex]) {
+            for (let neighbor of this.Graph[vertex]) {
+                this.Graph[neighbor].delete(vertex); 
+            }
+            delete this.Graph[vertex];
         }
     }
 
@@ -44,6 +45,7 @@ class Graph{
         }
         return result
     }
+
     DFS(start){
         if(!this.Graph[start]) return []
         let stack=[start]
@@ -94,19 +96,20 @@ return result
 const graph = new Graph()
 
 
-graph.addVertex('A');
-graph.addVertex('B');
-graph.addVertex('C');
-graph.addVertex('D');
-graph.addVertex('E');
+// graph.addVertex('A');
+// graph.addVertex('B');
+// graph.addVertex('C');
+// graph.addVertex('D');
+// graph.addVertex('E');
 
 graph.addEdge('A', 'B');
 graph.addEdge('B', 'C');
 graph.addEdge('C', 'D');
 graph.addEdge('D', 'E');
+graph.removeVertex('D')
 
 console.log("Graph before removing a vertex:");
-console.log(graph);
+// console.log(graph);
 
-console.log(graph.BFS('A'))
+console.log(graph)
 
