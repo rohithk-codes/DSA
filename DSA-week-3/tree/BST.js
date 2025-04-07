@@ -44,13 +44,7 @@ preOrder(node=this.root){
     this.preOrder(node.right)
 }
 
-inOrder(root,arr){
-    if(root){
-        this.inOrder(root.left,arr)
-        arr.push(root.value)
-        this.inOrder(root.right,arr)
-    }
-  }
+
 
 postOrder(node=this.root){
     if(!node)return
@@ -106,6 +100,6 @@ bst.insert(21)
 bst.insert(10)
 bst.insert(9)
 bst.insert(8)
-bst.preOrder()
+bst.printPreorder(bst)
 
 console.log(bst.findNthlargest(5))

@@ -60,14 +60,15 @@
     return node
   }
 
-  inOrder(root,arr){
-    if(root){
-        this.inOrder(root.left,arr)
-        arr.push(root.value)
-        this.inOrder(root.right,arr)
+  inOrder(node=this.root,arr){
+    if(node){
+        this.inOrder(node.left,arr)
+        arr.push(node.value)
+        this.inOrder(node.right,arr)
     }
   }
 
+ 
   findNthlargest(n){
     let arr =[]
     this.inOrder(this.root,arr)
@@ -79,11 +80,11 @@
 
  let bst = new BST()
  bst.insert(50)
- bst.insert(30)
- bst.insert(20)
+ bst.insert(3500)
+ bst.insert(2000)
  bst.insert(10)
- bst.insert(80)
- bst.insert(90)
+//  bst.insert(80)
+//  bst.insert(90)
 
  console.log(bst.findSecondLargest(bst.root,null))
  console.log(bst.findNthlargest(1));
