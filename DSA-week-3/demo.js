@@ -47,7 +47,6 @@ levelOrder(node =this.root){
             queue.push(curr.left)
         }
     }
-
 }
 
     include(value){
@@ -146,185 +145,172 @@ levelOrder(node =this.root){
 //   console.log(l.findMax())
 //   console.log(l.findHeight())
   l.levelOrder()
-//   console.log("preOrder")
-//   l.preOrder()
-//   console.log("inOrder")
-//   l.inOrder()
-//   console.log("postOrder")
-//   l.postOrder()
-//   console.log(l.search(5))
-//   console.log(l.isBST())
+  console.log("preOrder")
+  l.preOrder()
+  console.log("inOrder")
+  l.inOrder()
+  console.log("postOrder")
+  l.postOrder()
+  console.log(l.search(5))
+  console.log(l.isBST())
   
   
   
   
   
   
-//   class Node{
-//       constructor(value){
-//           this.value=value
-//           this.left=null
-//           this.right=null
-//       }
-//   }
-//   class BST{
-//       constructor(){
-//           this.root=null
-//       }
-//       insert(value){
-//           const newNode=new Node(value)
-//           if(!this.root){
-//               this.root=newNode
-//               return 
-//           }
-//           let current=this.root
-//           while(true){
-//               if(value<current.value){
-//                   if(!current.left){
-//                       current.left=newNode
-//                       return 
-//                   }
-//                   current=current.left
-//               }else if(value>current.value){
-//                   if(!current.right){
-//                       current.right=newNode
-//                       return 
-//                   }
-//                   current=current.right
-//               }
-//           }
-//       }
-//       KthSmallest(k){
-//           let count=0;
-//           let result=null;
-//          function inOrder(node){
-//              if(!node || result!==null) return 
-//              inOrder(node.left)
-//                  count++
-//                  if(count===k){
-//                      result=node.value
-//                      return 
-//                  }    
-//              inOrder(node.right)         
-//          }
-//              inOrder(this.root)
-//                  return result 
-//       }
-//   }
-//   const l = new BST();
-//   l.insert(12);
-//   l.insert(5);
-//   l.insert(15);
-//   l.insert(3);
-//   l.insert(7);
-//   l.insert(13);
-//   l.insert(17);
+  class Node{
+      constructor(value){
+          this.value=value
+          this.left=null
+          this.right=null
+      }
+  }
+  class BST{
+      constructor(){
+          this.root=null
+      }
+      insert(value){
+          const newNode=new Node(value)
+          if(!this.root){
+              this.root=newNode
+              return 
+          }
+          let current=this.root
+          while(true){
+              if(value<current.value){
+                  if(!current.left){
+                      current.left=newNode
+                      return 
+                  }
+                  current=current.left
+              }else if(value>current.value){
+                  if(!current.right){
+                      current.right=newNode
+                      return 
+                  }
+                  current=current.right
+              }
+          }
+      }
+      KthSmallest(k){
+          let count=0;
+          let result=null;
+         function inOrder(node){
+             if(!node || result!==null) return 
+             inOrder(node.left)
+                 count++
+                 if(count===k){
+                     result=node.value
+                     return 
+                 }    
+             inOrder(node.right)         
+         }
+             inOrder(this.root)
+                 return result 
+      }
+  }
+  const l = new BST();
+  l.insert(12);
+  l.insert(5);
+  l.insert(15);
+  l.insert(3);
+  l.insert(7);
+  l.insert(13);
+  l.insert(17);
   
-//   console.log(l.KthSmallest(3));
-//   console.log(l.KthSmallest(1));
-//   console.log(l.KthSmallest(5));
-  
-  
+  console.log(l.KthSmallest(3));
+  console.log(l.KthSmallest(1));
+  console.log(l.KthSmallest(5));
   
   
-//   class Node{
-//       constructor(data){
-//           this.value=data
-//           this.left=null;
-//           this.right=null
-//       }
-//   }
-//   class BST{
-//       constructor(){
-//           this.root=null
-//       }
-//       insert(value){
-//           const newNode=new Node(value)
-//           if(!this.root){
-//               this.root=newNode
-//               return 
-//           }
-//           let current=this.root
-//           while(true){
-//               if(value<current.value){
-//                   if(!current.left){
-//                     current.left=newNode
-//                     return 
-//                   }
-//                   current=current.left
-//               }else if(value>current.value){
-//                   if(!current.right){
-//                       current.right=newNode
-//                       return
-//                   }
-//                   current=current.right
-//               }
-//           }
-//       }
+  
+  
+  class Node{
+      constructor(data){
+          this.value=data
+          this.left=null;
+          this.right=null
+      }
+  }
+  class BST{
+      constructor(){
+          this.root=null
+      }
+      insert(value){
+          const newNode=new Node(value)
+          if(!this.root){
+              this.root=newNode
+              return 
+          }
+          let current=this.root
+          while(true){
+              if(value<current.value){
+                  if(!current.left){
+                    current.left=newNode
+                    return 
+                  }
+                  current=current.left
+              }else if(value>current.value){
+                  if(!current.right){
+                      current.right=newNode
+                      return
+                  }
+                  current=current.right
+              }
+          }
+      }
+//largest
+      largest(node=this.root){
+          if(!node)return
+          while(node.right){
+            node =node.right
+          }
+        return node.value
+        
+      }
 
-//       largest(node=this.root){
-//           if(!node)return
-//           while(node.right){
-//             node =node.right
-//           }
-//         return node.value
-//       }
-
-//     //   secondLargest(){
-//     //       let prev=null;
-//     //       let current=this.root
-//     //       while(current && current.right){
-//     //           prev=current
-//     //           current=current.right
-//     //       }
-//     //       if(current && current.left){
-//     //           current=current.left
-//     //           while(current.right) {
-//     //               current=current.right
-//     //           }
-//     //       }
-//     //       return prev? prev.value:null
-//     //   }
-//     secondLargest() {
-//         if (!this.root || (!this.root.left && !this.root.right)) {
-//             return null; // No second largest if the tree has only one node or is empty
-//         }
+  
+    secondLargest() {
+        if (!this.root || (!this.root.left && !this.root.right)) {
+            return null; // No second largest if the tree has only one node or is empty
+        }
     
-//         let curr = this.root;
-//         let prev = null;
+        let curr = this.root;
+        let prev = null;
     
-//         // Step 1: Find the rightmost (largest) node
-//         while (curr.right) {
-//             prev = curr; // Store the parent of the largest node
-//             curr = curr.right;
-//         }
+        // Step 1: Find the rightmost (largest) node
+        while (curr.right) {
+            prev = curr; // Store the parent of the largest node
+            curr = curr.right;
+        }
     
-//         // Step 2: If the largest node has a left subtree,
-//         // the second largest is the rightmost node in that left subtree.
-//         if (curr.left) {
-//             curr = curr.left;
-//             while (curr.right) {
-//                 curr = curr.right;
-//             }
-//             return curr.value;
-//         }
+        // Step 2: If the largest node has a left subtree,
+        // the second largest is the rightmost node in that left subtree.
+        if (curr.left) {
+            curr = curr.left;
+            while (curr.right) {
+                curr = curr.right;
+            }
+            return curr.value;
+        }
     
-//         // Step 3: If there is no left subtree,
-//         // the second largest is the parent (`prev`) of the largest node.
-//         return prev ? prev.value : null;
-//     }
+        // Step 3: If there is no left subtree,
+        // the second largest is the parent (`prev`) of the largest node.
+        return prev ? prev.value : null;
+    }
     
 
 
-//   }
+  }
 
-//   const t = new BST()
+  const t = new BST()
 
 
-//   t.insert(20)
+  t.insert(20)
 
-//   t.insert(1)
-//   t.insert(3360)
-//   t.insert(450)
-//   console.log(t.largest());
-//   console.log(t.secondLargest())
+  t.insert(1)
+  t.insert(3360)
+  t.insert(450)
+  console.log(t.largest());
+  console.log(t.secondLargest())

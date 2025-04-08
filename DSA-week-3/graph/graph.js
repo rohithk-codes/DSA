@@ -113,3 +113,8 @@ console.log("Graph before removing a vertex:");
 
 console.log(graph)
 
+
+class Node{
+    
+}
+
