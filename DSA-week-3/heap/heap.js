@@ -12,7 +12,7 @@ class MaxHeap{
         while(index > 0){
             let parentIndex = Math.floor((index-1)/2);
             if(this.heap[parentIndex]>=this.heap[index]) break;
-            this.swap(index,parentIndex);
+            [this.heap[parentIndex],this.heap[index]]=[this.heap[index],this.heap[parentIndex]]
             index = parentIndex
         }
     }
@@ -46,7 +46,7 @@ class MaxHeap{
 
     swap(i,j){
         [this.heap[i],this.heap[j]] = [this.heap[j],this.heap[i]]
-    }
+    }      
 
     printHeap(){
         console.log(this.heap);
