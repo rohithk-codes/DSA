@@ -67,7 +67,7 @@ return result
     }
 
     shortestPath(start,end){
-        if(!this.Graph[start] || this.Graph[end]){
+        if(!this.Graph[start] || !this.Graph[end]){
             return null
         }
         let queue=[start]
@@ -87,9 +87,7 @@ return result
             }
         }
         return null
-    }
-
-    
+    }   
 }
 
 
@@ -106,15 +104,13 @@ graph.addEdge('A', 'B');
 graph.addEdge('B', 'C');
 graph.addEdge('C', 'D');
 graph.addEdge('D', 'E');
-graph.removeVertex('D')
+//graph.removeVertex('D')
 
 console.log("Graph before removing a vertex:");
 // console.log(graph);
 
-console.log(graph)
+console.log(graph.shortestPath("A","E"))
 
 
-class Node{
-    
-}
+
 
