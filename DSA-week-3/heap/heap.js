@@ -43,7 +43,7 @@ class MaxHeap{
             index = largest
         }
     }
-
+        
     swap(i,j){
         [this.heap[i],this.heap[j]] = [this.heap[j],this.heap[i]]
     }      
@@ -57,7 +57,7 @@ const maxHeap = new MaxHeap();
 maxHeap.insert(10);
 maxHeap.insert(5);
 maxHeap.insert(20);
-maxHeap.insert(2);
+maxHeap.insert(2); 
 maxHeap.insert(6);
 
 console.log("Max Heap:", maxHeap.heap);

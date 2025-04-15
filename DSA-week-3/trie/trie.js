@@ -43,32 +43,32 @@ class Trie {
         let node = this.root
         let result = []
         for (let char of prefix) {
-            if (!node.child[char]) return result
+            if (!node.child[char]) return result 
             node = node.child[char]
         }
-        this.dfs(node, prefix, result)
+        this.collectingWords(node, prefix, result)
         return result
     }
 
-    dfs(node, prefix, result){
+    collectingWords(node, prefix, result){
         if (node.isEnd) {
-         result.push(word)
+         result.push(prefix)
         }
         for (let char in node.child){
-            this.dfs(node.child[char], prefix + char, result)
+            this.collectingWords(node.child[char], prefix + char, result)
         }
     }
 }
 
-const trie = new Trie();
-trie.insert("apple");
-trie.insert("app");
-trie.insert("apps");
-trie.insert("apex");
-trie.insert("bat");
-trie.insert("ball");
+    const trie = new Trie();
+    trie.insert("apple");
+    trie.insert("app");
+    trie.insert("apps");
+    trie.insert("apex");
+    trie.insert("bat");
+    trie.insert("ball");
 
-console.log(trie.autocomplete("ap")); // ["apple", "app", "apps", "apex"]
-console.log(trie.autocomplete("b"));  // ["bat", "ball"]
-console.log(trie.autocomplete("c"));  // []
-console.log(trie.search('pple'))
+    console.log(trie.autocomplete("ap")); // ["apple", "app", "apps", "apex"]
+    console.log(trie.autocomplete("b"));  // ["bat", "ball"]
+    console.log(trie.autocomplete("c"));  // []
+    console.log(trie.search('pple'))
