@@ -78,4 +78,3 @@ console.log("Heap After Deletion:", maxHeap.heap);
 //6..Replace the Root with a New Value
 
 //7.Find the N Smallest Elements in a Max Heap
-//8.
