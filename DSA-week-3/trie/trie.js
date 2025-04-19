@@ -71,4 +71,4 @@ class Trie {
     console.log(trie.autocomplete("ap")); // ["apple", "app", "apps", "apex"]
     console.log(trie.autocomplete("b"));  // ["bat", "ball"]
     console.log(trie.autocomplete("c"));  // []
-    console.log(trie.search('pple'))//
+    console.log(trie.search('pple'))///
