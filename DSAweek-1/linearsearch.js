@@ -35,5 +35,6 @@ function binarySearch(arr,target){
 }
 
 
+
 console.log(binarySearch(arr,5));
 
