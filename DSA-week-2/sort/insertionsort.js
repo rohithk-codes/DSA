@@ -19,4 +19,4 @@ function insertionsort(arr){
 
 console.log(insertionsort(arr))
 
-//2
+//2.
