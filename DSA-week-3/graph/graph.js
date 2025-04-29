@@ -104,7 +104,7 @@ graph.addEdge('A', 'B');
 graph.addEdge('B', 'C');
 graph.addEdge('C', 'D');
 graph.addEdge('D', 'E');
-//graph.removeVertex('D')
+///graph.removeVertex('D')
 
 console.log("Graph before removing a vertex:");
 // console.log(graph);
