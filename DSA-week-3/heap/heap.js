@@ -65,7 +65,7 @@ console.log("Deleted Root:", maxHeap.deleteRoot());
 console.log("Heap After Deletion:", maxHeap.heap);
 
 
-//1..Find the Maximum Element Without Removing It
+///1..Find the Maximum Element Without Removing It
 
 //2..Convert an Array into a Max Heap
 
