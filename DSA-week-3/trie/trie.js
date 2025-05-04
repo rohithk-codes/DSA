@@ -58,6 +58,22 @@ class Trie {
             this.collectingWords(node.child[char], prefix + char, result)
         }
     }
+
+    findLongestPrefix(word){
+        let node = this.root
+        let currentPrefix = ''
+        let longestPrefix = ''
+        for(let char of word){
+         if(!node.child[char])break
+         
+         currentPrefix+=char
+         node = node.child[char]
+         if(node.isEnd){
+            longestPrefix = currentPrefix
+         }
+        }
+        return longestPrefix
+    }
 }
 
     const trie = new Trie();
@@ -72,3 +88,4 @@ class Trie {
     console.log(trie.autocomplete("b"));  // ["bat", "ball"]
     console.log(trie.autocomplete("c"));  // []
     console.log(trie.search('pple'))//
+    console.log(trie.findLongestPrefix('applehfhf'))
