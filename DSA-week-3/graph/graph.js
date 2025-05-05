@@ -87,7 +87,11 @@ return result
             }
         }
         return null
-    }   
+    }
+   
+     
+    
+
 }
 
 
@@ -110,6 +114,8 @@ console.log("Graph before removing a vertex:");
 /// console.log(graph);
 
 console.log(graph.shortestPath("A","E"))
+
+
 
 
 
