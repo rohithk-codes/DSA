@@ -66,7 +66,7 @@ levelOrder(node =this.root){
         let closest=this.root.value
         while(current){
             if(Math.abs(target-current.value)<Math.abs(target-closest)){
-                current=closest
+                closest=current.value
             }
             if(target<current.value){
                 current=current.left
@@ -123,6 +123,9 @@ levelOrder(node =this.root){
         if(node.value<=min || node.value>=max) return false
         return this.isBST(node.left,min,node.value) &&  this.isBST(node.right,node.value,max)
     } //valid
+
+
+    
     
   }
   
@@ -295,6 +298,43 @@ levelOrder(node =this.root){
         // the second largest is the parent (`prev`) of the largest node.
         return prev ? prev.value : null;
     }
+
+
+
+    deleteNode(node=this.root, key) {
+        if (!node) return null;
+      
+        // Go left if key is smaller
+        if (key < node.val) {
+            node.left = deleteNode(node.left, key);
+        }
+        // Go right if key is bigger
+        else if (key > node.val) {
+            node.right = deleteNode(node.right, key);
+        }
+        // Found the node to delete
+        else {
+          // Case 1: No child
+          if (!node.left && !node.right) return null;
+      
+          // Case 2: One child
+          if (!node.left) return node.right;
+          if (!node.right) return node.left;
+      
+          // Case 3: Two children
+          let minNode = findMin(node.right);
+          node.val = minNode.val;
+          node.right = deleteNode(node.right, minNode.val);
+        }
+        return node;
+      }
+      
+       findMin(node) {
+        while (node.left !== null) {
+          node = node.left;
+        }
+        return node;
+      }
     
 
 

@@ -59,20 +59,35 @@ class Trie {
         }
     }
 
+    // findLongestPrefix(word){
+    //     let node = this.root
+    //     let currentPrefix = ''
+    //     let longestPrefix = ''
+    //     for(let char of word){
+    //      if(!node.child[char])break
+         
+    //      currentPrefix+=char
+    //      node = node.child[char]
+    //      if(node.isEnd){
+    //         longestPrefix = currentPrefix
+    //      }
+    //     }
+    //     return longestPrefix
+    // }
+
     findLongestPrefix(word){
         let node = this.root
-        let currentPrefix = ''
-        let longestPrefix = ''
+        let longest =''
+        let current =''
         for(let char of word){
-         if(!node.child[char])break
-         
-         currentPrefix+=char
-         node = node.child[char]
-         if(node.isEnd){
-            longestPrefix = currentPrefix
-         }
+           if(! node.child[char])break
+            current+=char
+           node = node.child[char]
+if (node.isEnd){
+    longest = current
+}
         }
-        return longestPrefix
+        return longest
     }
 }
 
@@ -88,4 +103,4 @@ class Trie {
     console.log(trie.autocomplete("b"));  // ["bat", "ball"]
     console.log(trie.autocomplete("c"));  // []
     console.log(trie.search('pple'))//
-    console.log(trie.findLongestPrefix('applehfhf'))
+    console.log(trie.findLongestPrefix('appss'))
