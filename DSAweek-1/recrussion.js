@@ -40,7 +40,7 @@ console.log(sumOfarray(arr,arr.length-1))
 
 
 
-3.
+3.//example
  function printFun(test){
 
     if(test<1){
