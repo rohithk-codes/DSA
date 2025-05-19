@@ -113,11 +113,11 @@ levelOrder(node =this.root){
         console.log(node.value)
   
     }
-    search(value,node=this.root){
-        if(!node) return 
-        if(value==node.value) return node
-        return value<node.value? this.search(value,node.left):this.search(value,node.right)   
-    }
+        search(value,node=this.root){
+            if(!node) return 
+            if(value==node.value) return node
+            return value<node.value? this.search(value,node.left):this.search(value,node.right)   
+        }
     isBST(node=this.root,min=-Infinity,max=Infinity){
         if(!node) return true
         if(node.value<=min || node.value>=max) return false
@@ -317,7 +317,7 @@ levelOrder(node =this.root){
           // Case 1: No child
           if (!node.left && !node.right) return null;
       
-          // Case 2: One child
+          // Case 2: One child  
           if (!node.left) return node.right;
           if (!node.right) return node.left;
       
